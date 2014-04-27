@@ -21,12 +21,7 @@ Step one is to merge training and test data sets to create one big data set.
     The program follows the five processing steps as described above. A detailed explanation of my R program
     is described in detail in my CodeBook.md in /CleaningData/CodeBook.md.
 
-    Step one is to merge training and test data sets to create one big data set.
-    Step two is to extract the values of  the means and standard deviations for each measurement. 
-    Step three is to use the decribed activity names to label activities in the data set
-    Step four is to appropriately name the data set with descriptive activity names. 
-    Step five is to create a  tidy data set with the average of each variable for each activity and each subject, and to write the final result to a text file located in my c drive.
-    
+   
     For more information on my processes and columns description of my tidy data set, please visit my codebook 
     at my repo /CleaningData/CodeBook.md.
     For more information on R my code, please visit my R code at /CleaningData/run_analysis.R. 
