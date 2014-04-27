@@ -1,5 +1,3 @@
-## Good one with working sqldf statements
-
 ## training data
 ##setwd ("c:/dung/dataCleaning/UCI HAR Dataset/train")
 setwd ("c:/dung/github/UCI HAR Dataset/train")
@@ -234,11 +232,12 @@ colnamesSelectedDf
 
 
 tidycolnames = c (saveselectedbigcolnames[50],saveselectedbigcolnames[49],saveselectedbigcolnames[1:48])
+tidycolnames = c ("Subject","Activity",saveselectedbigcolnames[1:48])
 tidycolnames
 
 
 countTotalField = 0
-for (i in 1: 6)
+for (i in 1: 30)
   
 {
   for (j in subjectActivity)
