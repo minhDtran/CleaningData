@@ -33,87 +33,121 @@ There are 50 fields in my tidy file, and they are defined as follow
 
 16. tBodyAccJerkmeanY is the tBodyAccJerk mean for Y
 
-17. tBodyAccJerkmeanZ 
+17. tBodyAccJerkmeanZ is the tBodyAccJerk mean for Z
 
-18. tBodyAccJerkstdX 
+18. tBodyAccJerkstdX  is the tBodyAccJerk std for X
 
-19. tBodyAccJerkstdY
+19. tBodyAccJerkstdY   is the tBodyAccJerk std for Y
 
-20. tBodyAccJerkstdZ
+20. tBodyAccJerkstdZ   is the tBodyAccJerk std for Z
 
-21. tBodyGyromeanX
+21. tBodyGyromeanX   is the tBodyGyro mean  for X
 
-22. tBodyGyromeanY
+22. tBodyGyromeanY is the tBodyGyro mean  for Y
 
-23. tBodyGyromeanZ
+23. tBodyGyromeanZ is the tBodyGyro mean  for Z
 
-24. tBodyGyrostdX
+24. tBodyGyrostdX is the tBodyGyro std  for X
 
-25.  tBodyGyrostdY
+25.  tBodyGyrostdY is the tBodyGyro std  for Y
 
-26.  tBodyGyrostdZ 
+26.  tBodyGyrostdZ is the tBodyGyro std  for Z
 
-27. tBodyGyroJerkmeanX 
+27. tBodyGyroJerkmeanX is the tBodyGyroJerk mean for X
 
-28. tBodyGyroJerkmeanY 
+28. tBodyGyroJerkmeanY is the tBodyGyroJerk mean for Y
 
-29. tBodyGyroJerkmeanZ 
+29. tBodyGyroJerkmeanZ is the tBodyGyroJerk mean for Z
 
-30. tBodyGyroJerkstdX
+30. tBodyGyroJerkstdX is the tBodyGyroJerk std for X
 
-31.  tBodyGyroJerkstdY 
+31.  tBodyGyroJerkstdY is the tBodyGyroJerk std for Y
 
-32. tBodyGyroJerkstdZ 
+32. tBodyGyroJerkstdZ is the tBodyGyroJerk std for Z
 
-33. fBodyAccmeanX 
+33. fBodyAccmeanX is the fBodyAcc mean for X
 
-34. fBodyAccmeanY 
+34. fBodyAccmeanY is the fBodyAcc mean for Y
 
-35. fBodyAccmeanZ
+35. fBodyAccmeanZ is the fBodyAcc mean for Z
 
-36.  fBodyAccstdX 
+36.  fBodyAccstdX is the fBodyAcc std for X
 
-37. fBodyAccstdY 
+37. fBodyAccstdY is the fBodyAcc std for Y
 
-38. fBodyAccstdZ 
+38. fBodyAccstdZ is the fBodyAcc std for Z
 
-39. fBodyAccJerkmeanX 
+39. fBodyAccJerkmeanX  is the fBodyAccJerk mean for X
 
-40. fBodyAccJerkmeanY 
+40. fBodyAccJerkmeanY is the fBodyAccJerk mean for Y
 
-41. fBodyAccJerkmeanZ 
+41. fBodyAccJerkmeanZ is the fBodyAccJerk mean for Z 
 
-42. fBodyAccJerkstdX 
+42. fBodyAccJerkstdX is the fBodyAccJerk std for X
 
-43. fBodyAccJerkstdY 
+43. fBodyAccJerkstdY is the fBodyAccJerk std for Y
 
-44. fBodyAccJerkstdZ 
+44. fBodyAccJerkstdZ is the fBodyAccJerk std for Z
 
-45. fBodyGyromeanX 
+45. fBodyGyromeanX is the fBodyGyromean mean for X
 
-46. fBodyGyromeanY 
+46. fBodyGyromeanY is the fBodyGyromean mean for Y
 
-47. fBodyGyromeanZ
+47. fBodyGyromeanZ is the fBodyGyromean mean for Z
 
-48.  fBodyGyrostdX 
+48.  fBodyGyrostdX is the fBodyGyromean  std for X
 
-49. fBodyGyrostdY 
+49. fBodyGyrostdY is the fBodyGyromean  std for Y
 
-50. fBodyGyrostdZ
+50. fBodyGyrostdZ is the fBodyGyromean  std for Z
 
 
 Next, I describe the steps I took for my data transformations
 
-1. Merges the training and the test sets to create one data set. 
+1. Step one is to merges the training and the test sets to create one data set. 
    From my train directory in my c drive "c:/dung/github/UCI HAR Dataset/train", I read the X Train data set, Y train      data  set, and subject train data set . I then bind them all together by the column binds. 
-   Similarly from my test directory, I did the similar column binding with my test dataset.
-   I then add the testing data frame to the training dat frame
+   This is my R code swhoing the combining:
+     setwd ("c:/dung/github/UCI HAR Dataset/train")
+     train1 <- read.table ("X_train.txt",header=FALSE)
+     ncol (train1)
+     nrow (train1)
+     head (train1)
+     train2 = read.table ("y_train.txt",header=FALSE)
+     ncol (train2)
+     nrow (train2)
+     head (train2)
+     train2 [1:50,1]
+     subject = read.table ("subject_train.txt",header=FALSE)
+     ncol (subject)
+     train.df <- cbind (train1,train2,subject)
+     head (train.df)
+     nrow (train.df)
+     ncol (train.df)
+     str (train.df)
+     colnames (train.df[,1:10])
+     train.df[1,1:15]
+   
+    Similarly from my test directory, I did the similar column binding with my test dataset.
+    I then add the testing data frame to the training data frame as shown as follow in my R code:
+        
+     ## merge to data frame
+     ## Step 1 : get big data frame of combine test and train data
+     ncol (train.df)
+     ncol(test.df)
+     big.df = rbind(train.df,test.df)
+     big.df [1,1:10]
+     nrow (big.df)
+     ncol (big.df)
 
 
-2. Extracts only the measurements on the mean and standard deviation for each measurement.
-   I use xgrep command to attract th emean()-x, mean()-y,  mean(z),std()-x, std()-y, std()-z out of my data frame. I       then use gsub function to remove the () and - out. 
+2. Step two is to extract only the measurements on the mean and standard deviation for each measurement of my data   
+    frame. My R code is as following:
+   toMatch <- c(".*mean\\(\\).*-X$", ".*std\\(\\).*-X$",".*mean\\(\\).*-Y$",".*std\\(\\).*-Y$",".*mean\\(\\).*-Z$",".*std\\(\\).*-Z$")
+  I then removed "()" and "-" from my data frame. My Code is as follow:
+   selectbig_colnames = gsub ("-","",selectbig_colnames)
+   selectbig_colnames = gsub ("\\(\\)","",selectbig_colnames)
 
-3. Uses descriptive activity names to name the activities in the data set
+3. Step 3 is to use descriptive activity names to name the activities in the data set. 
 
 4. Appropriately labels the data set with descriptive activity names. 
 
