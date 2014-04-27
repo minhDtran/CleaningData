@@ -1,4 +1,4 @@
-There are 50 fields in my tidy file, and they are defined as follow
+There are 50 columns in my tidy file, and they are defined as follow
 
 1. Subject  is the subject , and there are 30 subjects in the study
 
