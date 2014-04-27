@@ -100,3 +100,8 @@ There are 50 fields in my tidy file, and they define as follow
 
 50. fBodyGyrostdZ
 
+
+Next, I describe the steps I took for my data transformations
+
+1. 
+
