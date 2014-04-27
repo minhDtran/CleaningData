@@ -1,38 +1,39 @@
-There are 50 fields in my tidy file, and they define as follow
+There are 50 fields in my tidy file, and they are defined as follow
 
 1. Subject  is the subject , and there are 30 subjects in the study
 
-2.  Activity is the activity. There are total of six activities.
+2.  Activity is the activity. There are total of six activities usch as WALKING,WALKING_UPSTAIRS,WALKING_DOWNSTAIRS,
+    SITTING,STANDING, and LAYING
 
-3. tBodyAccmeanX 
+3. tBodyAccmeanX is the tBodyAcc mean for X
 
-4. tBodyAccmeanY 
+4. tBodyAccmeanY is the tBodyAcc mean for Y
 
-5. tBodyAccmeanZ
+5. tBodyAccmeanZ is the tBodyAcc mean for Z
 
-6. tBodyAccstdX
+6. tBodyAccstdX is the tBodyAcc standard deviation for X
 
-7. tBodyAccstdY
+7. tBodyAccstdY is the tBodyAcc standard deviation for Y
 
-8. tBodyAccstdZ
+8. tBodyAccstdZ is the tBodyAcc standard deviation for Z
 
-9. tGravityAccmeanX
+9. tGravityAccmeanX is the tGravityAcc mean for X
 
-10. tGravityAccmeanY
+10. tGravityAccmeanY is the tGravityAcc mean for Y
 
-11. tGravityAccmeanZ
+11. tGravityAccmeanZ is the tGravityAcc mean for Z
 
-12. tGravityAccstdX
+12. tGravityAccstdX is the tGravityAcc standard deviation for X
 
-13.  tGravityAccstdY
+13.  tGravityAccstdY is the tGravityAcc standard deviation for Y
 
-14.  tGravityAccstdZ
+14.  tGravityAccstdZ is the tGravityAcc standard deviation for Z
 
-15. tBodyAccJerkmeanX
+15. tBodyAccJerkmeanX is the tBodyAccJerk mean for X
 
-16. tBodyAccJerkmeanY
+16. tBodyAccJerkmeanY is the tBodyAccJerk mean for Y
 
-17. tBodyAccJerkmeanZ
+17. tBodyAccJerkmeanZ 
 
 18. tBodyAccJerkstdX 
 
