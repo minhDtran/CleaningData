@@ -1,4 +1,4 @@
 CleaningData
 ============
 
-Cleaning data course from coursera
+ 1. My dir is at 
