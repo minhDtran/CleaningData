@@ -102,9 +102,9 @@ There are 50 fields in my tidy file, and they are defined as follow
 50. fBodyGyrostdZ is the fBodyGyromean  std for Z
 
 
-Next, I describe the steps I took for my data transformations
+Next, I describe the steps I took for my data transformations in order to produce my tidy data set , and to write the tidy data set to a my test file located in my C drive.
 
-1. Step one is to merges the training and the test sets to create one data set. 
+1. Step one is to merges the training and the test sets to create a training data frame. 
    From my train directory in my c drive "c:/dung/github/UCI HAR Dataset/train", I read the X Train data set, Y train      data  set, and subject train data set . I then bind them all together by the column binds. 
    This is my R code swhoing the combining:
      setwd ("c:/dung/github/UCI HAR Dataset/train")
@@ -127,10 +127,9 @@ Next, I describe the steps I took for my data transformations
      colnames (train.df[,1:10])
      train.df[1,1:15]
    
-    Similarly from my test directory, I did the similar column binding with my test dataset. 
-    I then add the testing data frame to the training data frame as shown as follow in my R code:
+    Similarly from my test directory, I did the similar column binding with my test dataset to create a testing data frame. I then add the testing data frame to the training data frame as shown as follow in my R code:
         
-     ## merge to data frame
+     ## merge testing and training data frames
      ## Step 1 : get big data frame of combine test and train data
      ncol (train.df)
      ncol(test.df)
