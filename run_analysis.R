@@ -275,5 +275,8 @@ for (i in 1: 30)
     sink()
   }
 }  ## good for
-print (countTotalField)  ### good count = 1728, and result8 = some of -0.9471368 ,and -0.9635715
+print (countTotalField) 
+
+
+
 
