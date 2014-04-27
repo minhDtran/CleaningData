@@ -127,7 +127,7 @@ Next, I describe the steps I took for my data transformations
      colnames (train.df[,1:10])
      train.df[1,1:15]
    
-    Similarly from my test directory, I did the similar column binding with my test dataset.
+    Similarly from my test directory, I did the similar column binding with my test dataset. 
     I then add the testing data frame to the training data frame as shown as follow in my R code:
         
      ## merge to data frame
@@ -143,21 +143,64 @@ Next, I describe the steps I took for my data transformations
 2. Step two is to extract only the measurements on the mean and standard deviation for each measurement of my data   
     frame. My R code is as following:
    toMatch <- c(".*mean\\(\\).*-X$", ".*std\\(\\).*-X$",".*mean\\(\\).*-Y$",".*std\\(\\).*-Y$",".*mean\\(\\).*-Z$",".*std\\(\\).*-Z$")
-  I then removed "()" and "-" from my data frame. My Code is as follow:
+  .I then removed "()" and "-" from my data frame. My Code is as follow:
    selectbig_colnames = gsub ("-","",selectbig_colnames)
    selectbig_colnames = gsub ("\\(\\)","",selectbig_colnames)
 
-3. Step 3 is to use descriptive activity names to name the activities in the data set. I then replace activity of the
-   dataset by their labels names. The code is activity.vector1 = replace (activity.vector,activity.vector ==     1,"WALKING")
+3. Step three is to use descriptive activity names to name the activities in the data set. I then replace activity of the dataset by their labels names. The code is activity.vector1 = replace (activity.vector,activity.vector ==     1,"WALKING")
 activity.vector2 = replace (activity.vector1,activity.vector1 == 2,"WALKING_UPSTAIRS")
 activity.vector3 = replace (activity.vector2,activity.vector2 == 3,"WALKING_DOWNSTAIRS")
 activity.vector4 = replace (activity.vector3,activity.vector3 == 4,"SITTING")
 activity.vector5 = replace (activity.vector4,activity.vector4 == 5,"STANDING")
 activity.vectorFinal = replace (activity.vector5,activity.vector5 == 6,"LAYING")
-activity.vectorFinal
+activity.vectorFinal. I then combine the activi column into my data frame. The code is selectedbig.df [,"Activity"]  = activity.vectorFinal
 
 
-4. Appropriately labels the data set with descriptive activity names. 
+4. Step four is to label the data set with descriptive activity names. The first column contains the subject name, the second column contains the activity , and the third to the fifty columns contain the mean and the standad deviation of field three to field fifty of my tidy data fields described from my codebook. My rcode for combining all of my fifty  columns is as following:
+ tidycolnames = c (saveselectedbigcolnames[50],saveselectedbigcolnames[49],saveselectedbigcolnames[1:48])
 
-5. Creates a second, independent tidy data set with the average of each variable for each activity and each subject. 
+
+5. Step five is to creates a second, independent tidy data set with the average of each variable for each activity and each subject. I create a tidy data frame and to write the tidy data frame into my text file located in my computer's C drive. My code is as following:
+
+ 
+countTotalField = 0
+for (i in 1: 30)
+  
+{
+  for (j in subjectActivity)
+  {
+    ## set up data frame for 50 elements
+    ddf = data.frame ()
+    
+    numberofColumns = 50
+    ddf = data.frame (t(rep(NA,numberofColumns)))
+    ddf = ddf [-1,]
+    ## append subject to data frame
+    dfIndex = 1;
+    ddf [1,dfIndex] = i
+    ## append activity to data frame
+    dfIndex = dfIndex + 1
+    ddf [1,dfIndex] = j
+    for (myField in colnamesSelectedDf [1:48])
+    {
+      q12 =  paste (c("select avg(", myField, ") from selected where Activity = ","'", j ,"'"," and Subject = ","'",i,"'"),collapse="")
+      q12
+      result12 =  sqldf (q12)  
+      ##print (result9)
+      countTotalField = countTotalField + 1
+      dfIndex = dfIndex + 1
+      ddf [1,dfIndex] = result12
+    }
+    ## print out df index
+    print (dfIndex)
+    ## print out data frame
+    names(ddf) = tidycolnames
+    
+    print (ddf)
+    sink("c:/dung/github/myfile.txt", append=TRUE, split=TRUE) 
+    print (ddf)
+    sink()
+  }
+}  
+print (countTotalField)  
 
