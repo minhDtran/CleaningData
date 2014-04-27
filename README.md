@@ -1,7 +1,7 @@
 CleaningData
 ============
 
-  To produce a tidy data set with fifty columns describe in my CodeBook.md based on the data located in my computer 's c drive located at   "c:\dung\github\UCI HAR Dataset". The dataset represents data collected from the Samsung Galaxy S smartphone. The data could be obtained from 
+  To produce a tidy data set with fifty columns describe in my CodeBook.md based on the data located in my computer 's c drive. It is located at   "c:\dung\github\UCI HAR Dataset". The dataset represents data collected from the Samsung Galaxy S smartphone. The data could be obtained from 
 https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip 
 ##My Script which produced the data set is located at /CleaningData/runanalysis.R
 
