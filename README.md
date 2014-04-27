@@ -5,11 +5,11 @@ CleaningData
 https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip 
 ####My Script which produced the data set is located at /CleaningData/run_analysis.R
 
-There are five steps I took for my data transformations in order to produce my tidy data set with fifty columns.
+There are five steps that I took for my data transformations in order to produce my tidy data set with fifty columns.
 The fifty columns are described as following: subject,activity , and the means and standard deviations of various X, Y, and Z. For more information on the fifty columns elements and how they are defined, please visit my /CleaningData/CodeBook.md.  
 
 
-    1. Step one is to merges the training and the test sets to create a training data frame. From my train directory in my c drive "c:/dung/github/UCI HAR Dataset/train", I read the X Train data set, Y train data set, and subject train data set . I then bind them all together by the column binds. This is my R code swhoing the combining: setwd ("c:/dung/github/UCI HAR Dataset/train") train1 <- read.table ("X_train.txt",header=FALSE) ncol (train1) nrow (train1) head (train1) train2 = read.table ("y_train.txt",header=FALSE) ncol (train2) nrow (train2) head (train2) train2 [1:50,1] subject = read.table ("subject_train.txt",header=FALSE) ncol (subject) train.df <- cbind (train1,train2,subject) head (train.df) nrow (train.df) ncol (train.df) str (train.df) colnames (train.df[,1:10]) train.df[1,1:15]
+    1. Step one is to merge the training and the test sets to create a training data frame. From my train directory in my c drive "c:/dung/github/UCI HAR Dataset/train", I read the X Train data set, Y train data set, and subject train data set . I then bind them all together by the column binds. This is my R code swhoing the combining: setwd ("c:/dung/github/UCI HAR Dataset/train") train1 <- read.table ("X_train.txt",header=FALSE) ncol (train1) nrow (train1) head (train1) train2 = read.table ("y_train.txt",header=FALSE) ncol (train2) nrow (train2) head (train2) train2 [1:50,1] subject = read.table ("subject_train.txt",header=FALSE) ncol (subject) train.df <- cbind (train1,train2,subject) head (train.df) nrow (train.df) ncol (train.df) str (train.df) colnames (train.df[,1:10]) train.df[1,1:15]
 
     Similarly from my test directory, I did the similar column binding with my test dataset to create a testing data frame. I then add the testing data frame to the training data frame as shown as follow in my R code:
 
