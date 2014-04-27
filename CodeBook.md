@@ -147,7 +147,15 @@ Next, I describe the steps I took for my data transformations
    selectbig_colnames = gsub ("-","",selectbig_colnames)
    selectbig_colnames = gsub ("\\(\\)","",selectbig_colnames)
 
-3. Step 3 is to use descriptive activity names to name the activities in the data set. 
+3. Step 3 is to use descriptive activity names to name the activities in the data set. I then replace activity of the
+   dataset by their labels names. The code is activity.vector1 = replace (activity.vector,activity.vector ==     1,"WALKING")
+activity.vector2 = replace (activity.vector1,activity.vector1 == 2,"WALKING_UPSTAIRS")
+activity.vector3 = replace (activity.vector2,activity.vector2 == 3,"WALKING_DOWNSTAIRS")
+activity.vector4 = replace (activity.vector3,activity.vector3 == 4,"SITTING")
+activity.vector5 = replace (activity.vector4,activity.vector4 == 5,"STANDING")
+activity.vectorFinal = replace (activity.vector5,activity.vector5 == 6,"LAYING")
+activity.vectorFinal
+
 
 4. Appropriately labels the data set with descriptive activity names. 
 
