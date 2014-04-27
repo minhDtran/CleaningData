@@ -16,7 +16,8 @@ My R program at /CleaningData/run_analysis.R follows five steps data transformat
     Step five is to create a  tidy data set with the average of each variable for each activity and each subject, and to write the final result to a text file located in my c drive.
     
     For more information on my processes and columns description of my tidy data set, please visit my codebook 
-    at my repo /CleaningData/Codebook.md.
+    at my repo /CleaningData/CodeBook.md.
     For more information on R my code, please visit my R code at /CleaningData/run_analysis.R. 
     My R program reads the data from "c:\dung\github\UCI HAR Dataset" and produces the tidy file . 
-    The program follows the five processing steps as described above. A detailed explanation of my R program is described in detail in my CodeBook.md in /CleaningData/CodeBook.md.
+    The program follows the five processing steps as described above. A detailed explanation of my R program
+    is described in detail in my CodeBook.md in /CleaningData/CodeBook.md.
