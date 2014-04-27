@@ -1,4 +1,4 @@
-## For information  regarding my CodeBook.md and ReadMe.md, please visit my repo /CleaningData . In my CleaningData repo, I have my CodeBook.md and ReadMe.md
+## For information  regarding my CodeBook.md and README.md, please visit my repo /CleaningData . In my CleaningData repo, I have my CodeBook.md and README.md
 
 ## training data
 ##setwd ("c:/dung/dataCleaning/UCI HAR Dataset/train")
@@ -280,8 +280,5 @@ for (i in 1: 30)
 print (countTotalField) 
 
 
-## For information regarding my CodeBook.md and ReadMe.md, please visit my repo /CleaningData . In my CleaningData repo, I have my CodeBook.md and ReadMe.md
-
-
-
+## For information  regarding my CodeBook.md and README.md, please visit my repo /CleaningData . In my CleaningData repo, I have my CodeBook.md and README.md
 
