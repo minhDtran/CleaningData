@@ -1,8 +1,11 @@
-
 There are 50 fields in my tidy file, and they define as follow
+
 1. Subject  is the subject , and there are 30 subjects in the study
+
 2.  Activity is the activity.
-3 .tBodyAccmeanX 
+
+3. tBodyAccmeanX 
+
 4 .tBodyAccmeanY 
 5. tBodyAccmeanZ 
 6 .tBodyAccstdX
