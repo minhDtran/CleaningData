@@ -18,5 +18,5 @@ My R program at /CleaningData/run_analysis.R follows five steps data transformat
     For more information on my processes and columns description of my tidy data set, please visit my codebook 
     at my repo /CleaningData/Codebook.md.
     For more information on R my code, please visit my R code at /CleaningData/run_analysis.R. 
-    My R program reads the data from "c:\dung\github\UCI HAR Dataset" and produces the tidy file . The program follows the five processing steps as described above. A detailed explanation of my R program is described in detail
-in my CodeBook.md in /CleaningData/CodeBook.md.
+    My R program reads the data from "c:\dung\github\UCI HAR Dataset" and produces the tidy file . 
+    The program follows the five processing steps as described above. A detailed explanation of my R program is described in detail in my CodeBook.md in /CleaningData/CodeBook.md.
