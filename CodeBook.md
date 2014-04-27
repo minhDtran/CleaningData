@@ -1,4 +1,4 @@
-There are 50 columns in my tidy file, and they are defined as follow
+There are 50 columns in my tidy file, and they are defined as following:
 
 1. Subject  is the subject , and there are 30 subjects in the study
 
@@ -104,9 +104,9 @@ There are 50 columns in my tidy file, and they are defined as follow
 
 Next, I describe the steps I took for my data transformations in order to produce my tidy data set , and to write the tidy data set to a my test file located in my C drive.
 
-1. Step one is to merges the training and the test sets to create a training data frame. 
-   From my train directory in my c drive "c:/dung/github/UCI HAR Dataset/train", I read the X Train data set, Y train      data  set, and subject train data set . I then bind them all together by the column binds. 
-   This is my R code swhoing the combining:
+1. Step one is to merges the training of x , y , and subject data sets to create a training data frame. 
+   From my train directory in my c drive "c:/dung/github/UCI HAR Dataset/train", I read the X train data set, Y train      data  set, and subject train data set . I then bind them all together by the column binds. 
+   This is my R code showing the combination
      setwd ("c:/dung/github/UCI HAR Dataset/train")
      train1 <- read.table ("X_train.txt",header=FALSE)
      ncol (train1)
@@ -127,7 +127,7 @@ Next, I describe the steps I took for my data transformations in order to produc
      colnames (train.df[,1:10])
      train.df[1,1:15]
    
-    Similarly from my test directory, I did the similar column binding with my test dataset to create a testing data frame. I then add the testing data frame to the training data frame as shown as follow in my R code:
+    Similarly from my test directory, I did the similar column binding with my X and Y test dataset ,and subject test dataset to create a testing data frame. I then add the testing data frame to the training data frame as shown as following in my R code:
         
      ## merge testing and training data frames
      ## Step 1 : get big data frame of combine test and train data
@@ -142,7 +142,7 @@ Next, I describe the steps I took for my data transformations in order to produc
 2. Step two is to extract only the measurements on the mean and standard deviation for each measurement of my data   
     frame. My R code is as following:
    toMatch <- c(".*mean\\(\\).*-X$", ".*std\\(\\).*-X$",".*mean\\(\\).*-Y$",".*std\\(\\).*-Y$",".*mean\\(\\).*-Z$",".*std\\(\\).*-Z$")
-  .I then removed "()" and "-" from my data frame. My Code is as follow:
+  .I then removed "()" and "-" from my data frame. My Code is as following:
    selectbig_colnames = gsub ("-","",selectbig_colnames)
    selectbig_colnames = gsub ("\\(\\)","",selectbig_colnames)
 
@@ -155,7 +155,7 @@ activity.vectorFinal = replace (activity.vector5,activity.vector5 == 6,"LAYING")
 activity.vectorFinal. I then combine the activi column into my data frame. The code is selectedbig.df [,"Activity"]  = activity.vectorFinal
 
 
-4. Step four is to label the data set with descriptive activity names. The first column contains the subject name, the second column contains the activity , and the third to the fifty columns contain the mean and the standad deviation of field three to field fifty of my tidy data fields described from my codebook. My rcode for combining all of my fifty  columns is as following:
+4. Step four is to label the data set with descriptive activity names. The first column contains the subject name, the second column contains the activity , and the third to the fifty columns contain the mean and the standad deviation of field three to field fifty of my tidy data fields described from my codebook. My R code for combining all of my fifty  columns is as following:
  tidycolnames = c (saveselectedbigcolnames[50],saveselectedbigcolnames[49],saveselectedbigcolnames[1:48])
 
 
@@ -203,3 +203,5 @@ for (i in 1: 30)
 }  
 print (countTotalField)  
 
+
+For more information of how the code works, please visit /CleaningData/run_analysis.R
