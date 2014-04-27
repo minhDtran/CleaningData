@@ -10,10 +10,10 @@ The fifty columns are described as following: subject,activity , and the means a
 My R program at /CleaningData/run_analysis.R follows five steps data transformations. The five steps data transformnation are as following:
 
     Step one is to merge training and test data sets to create one big data set.
-    Step two is to extracts the values of  the means and standard deviations for each measurement. 
-    Step three is to uses the decribed activity names to label activities in the data set
+    Step two is to extract the values of  the means and standard deviations for each measurement. 
+    Step three is to use the decribed activity names to label activities in the data set
     Step four is to appropriately name the data set with descriptive activity names. 
-    Step five is to create a  tidy data set with the average of each variable for each activity and each subject, and to write the final result to a file located in my c drive.
+    Step five is to create a  tidy data set with the average of each variable for each activity and each subject, and to write the final result to a text file located in my c drive.
     
     For more information on my processes and columns description of my tidy data set, please visit my codebook at my repo /CleaningData/Codebook.md.
     For more information on R my code, please visit my R code at /CleaningData/run_analysis.R. My R program reads the data from "c:\dung\github\UCI HAR Dataset" and produces the tidy file . The program follows the five processing steps as described above. A detailed explanation of my R program is described in detail in my CodeBook.md in /CleaningData/CodeBook.md.
