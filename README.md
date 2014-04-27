@@ -3,7 +3,7 @@ CleaningData
 
   To produce a tidy data set with fifty columns describe in my CodeBook.md based on the data located in my computer 's c drive. It is located at   "c:\dung\github\UCI HAR Dataset". The dataset represents data collected from the Samsung Galaxy S smartphone. The data could be obtained from 
 https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip 
-##My Script which produced the data set is located at /CleaningData/runanalysis.R
+####My Script which produced the data set is located at /CleaningData/runanalysis.R
 
 There are five steps I took for my data transformations in order to produce my tidy data set with fifty columns.
 The fifty columns are described as following: subject,activity , and the means and standard deviations of various X, Y, and Z. For more information on the fifty columns elements and how they are defined, please visit my /CleaningData/CodeBook.md.  
